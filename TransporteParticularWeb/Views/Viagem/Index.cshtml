@@ -1,0 +1,74 @@
+﻿@model IEnumerable<TransporteParticularWeb.Models.TransporteModels.Viagem>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Historico de Viagens</h2>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Fazer nova Viagem</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Cliente
+            </th>
+
+            <th>
+                Motorista
+            </th>
+
+            <th>
+                Veiculo
+            </th>
+            <th>
+                Enderoco Saida
+            </th>
+            <th>
+                Data Saida
+            </th>
+            <th>
+                Enderoco Chegada
+            </th>
+            <th>
+                Data Chegada
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.NomeCliente)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Motorista.NomeMotorista)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Veiculo.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnderecoSaida)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnderecoChegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnderecoSaida)
+            </td>
+            <td>               
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Mais Detalhes</a> 
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+﻿@model TransporteParticularWeb.Models.TransporteModels.Viagem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Dados Viagem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Cliente:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.NomeCliente)
+        </dd>
+        <dt>
+            Motorista:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Motorista.NomeMotorista)
+        </dd>
+        <dt>
+            Veiculo:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Veiculo.Modelo)
+        </dd>
+        <dt>
+            Endereco Saida:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoSaida)
+        </dd>
+        <dt>
+            Data Saida:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataSaida)
+        </dd>
+        <dt>
+            Endereco Chegada:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoChegada)
+        </dd>
+        <dt>
+            Data Chegada:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataChegada)
+        </dd>       
+    </dl>
+</div>
+<div>   
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>

@@ -1,0 +1,63 @@
+﻿@model TransporteParticularWeb.Models.TransporteModels.Viagem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Fazer Viagem</h2>
+
+<h4>Dados Viagem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Cliente.NomeCliente" class="control-label">Cliente</label>
+                <input asp-for="Cliente.NomeCliente" class="form-control" />
+                <span asp-validation-for="Cliente.NomeCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Motorista.NomeMotorista" class="control-label">Motorista</label>
+                <input asp-for="Motorista.NomeMotorista" class="form-control" />
+                <span asp-validation-for="Motorista.NomeMotorista" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Veiculo.Modelo" class="control-label">Veiculo</label>
+                <input asp-for="Veiculo.Modelo" class="form-control" />
+                <span asp-validation-for="Veiculo.Modelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoSaida" class="control-label">Endereco Saida</label>
+                <input asp-for="EnderecoSaida" class="form-control" />
+                <span asp-validation-for="EnderecoSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataSaida" class="control-label">Data Saida</label>
+                <input type="date" asp-for="DataSaida" class="form-control" />
+                <span asp-validation-for="DataSaida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnderecoChegada" class="control-label">Endereco Chegada</label>
+                <input type="email" asp-for="EnderecoChegada" class="form-control" />
+                <span asp-validation-for="EnderecoChegada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataChegada" class="control-label">Data Chegada</label>
+                <input type="date" asp-for="DataChegada" class="form-control" />
+                <span asp-validation-for="DataChegada" class="text-danger"></span>
+            </div>         
+            <div class="form-group">
+                <input type="submit" value="Confirmar Viagem" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
